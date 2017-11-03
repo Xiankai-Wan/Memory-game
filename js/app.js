@@ -1,7 +1,15 @@
 /*
  * Create a list that holds all of your cards
  */
-
+var cards = [
+              "fa-diamond","fa-diamond",
+              "fa-paper-plane-o","fa-paper-plane-o",
+              "fa-anchor","fa-anchor",
+              "fa-bolt","fa-bolt",
+              "fa-cube","fa-cube",
+              "fa-leaf","fa-leaf",
+              "fa-bicycle","fa-bicycle",
+              "fa-bomb","fa-bomb"]
 
 /*
  * Display the cards on the page
@@ -10,20 +18,31 @@
  *   - add each card's HTML to the page
  */
 
+
 // Shuffle function from http://stackoverflow.com/a/2450976
-function shuffle(array) {
-    var currentIndex = array.length, temporaryValue, randomIndex;
+// function shuffle(array) {
+//     var currentIndex = array.length, temporaryValue, randomIndex;
+//
+//     while (currentIndex !== 0) {
+//         randomIndex = Math.floor(Math.random() * currentIndex);
+//         currentIndex -= 1;
+//         temporaryValue = array[currentIndex];
+//         array[currentIndex] = array[randomIndex];
+//         array[randomIndex] = temporaryValue;
+//     }
+//
+//     return array;
+// }
 
-    while (currentIndex !== 0) {
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex -= 1;
-        temporaryValue = array[currentIndex];
-        array[currentIndex] = array[randomIndex];
-        array[randomIndex] = temporaryValue;
-    }
-
-    return array;
+// more easy way for shuffle
+function shuffle(array){
+  array.sort(function(){
+    return Math.random() > 0.5? 1:-1;
+  })
 }
+
+
+
 
 
 /*

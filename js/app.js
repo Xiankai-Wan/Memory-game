@@ -34,21 +34,24 @@ var cards = [
 //
 //     return array;
 // }
-
+var steps = 0;
+var openCards = 0;
 $(function(){
   initGamePage();
   $('ul.deck').on('click', 'li', function () {
+    steps++;
+    openCards++
+    $('span.moves').text(steps);
     $(this).addClass('open show');
   });
 });
 
 // more easy way for shuffle
 function shuffle(array){
-  copyArr = array.slice(); //复制数组，这样不会影响到原数组
-  copyArr.sort(function(){
+  array.sort(function(){
     return Math.random() > 0.5? 1:-1;
   });
-  return copyArr;
+  return array;
 }
 
 //ready the initial page info 
@@ -65,7 +68,7 @@ function initGamePage(){
 
 // restart the game
 $('.restart').click(function () {
-  initGamePage();  //这里只做到了重新初始化所有卡牌
+  window.location.reload();
 });
 
 /*

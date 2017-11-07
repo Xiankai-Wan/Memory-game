@@ -80,14 +80,32 @@ h1 {
     background: #02ccba;
     font-size: 33px;
 }
+/* win page test */
+#win {
+  position: absolute;
+  width: 700px;
+  height: 440px;
+  margin: 40px auto; 
+  border: 1px solid #ddd; 
+  border-radius: 15px; 
+  background: #ffff; 
+  opacity: 0.7;
+  text-align: center;
+  box-shadow: 0 3px 18px rgba(0,0,0,.1);
+  /* margin: auto; */
+  z-index: 1;
+}
 
+.hidden{
+    display: none;
+}
 /*
  * Styles for the Score Panel
  */
 
 .score-panel {
     text-align: left;
-    width: 345px;
+    width: 350px;
     margin-bottom: 10px;
 }
 
@@ -97,7 +115,12 @@ h1 {
     display: inline-block;
     margin: 0 5px 0 0;
 }
-
+.score-panel span{
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 0 0 30px;
+}
 .score-panel .stars li {
     list-style: none;
     display: inline-block;

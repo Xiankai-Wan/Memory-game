@@ -35,16 +35,60 @@ var cards = [
 //     return array;
 // }
 var steps = 0;
-var openCards = 0;
 $(function(){
   initGamePage();
-  $('ul.deck').on('click', 'li', function () {
-    steps++;
-    openCards++
-    $('span.moves').text(steps);
-    $(this).addClass('open show');
-  });
+  foo();
 });
+var nosame = [];
+function foo(){
+  $('li.card').click(function () { 
+    nosame.push($("ul li").index(this));
+    $(this).addClass('open show');
+    cards.unshift($(this).children().attr('class'));
+    if(nosame.length == 2){
+      if (nosame[0] == nosame[1]) {
+        nosame.pop();
+        cards.pop();
+      } else {
+        steps++;
+        $('span.moves').text(steps);
+        nosame.splice(0, 2);
+        console.log(cards);
+        if (cards.length % 2 == 0) {
+          checkMatch(cards);
+          console.log("我去判断一下");
+        } 
+      }
+    }
+  });
+}
+
+// 定义匹配函数
+function checkMatch(checkArry){
+  var class1 = checkArry[0];
+  var class2 = checkArry[1];
+  var SelectClass1 = '.' + class1.slice(3); //用于之后方便搜索
+  var SelectClass2 = '.' + class2.slice(3);
+  if (class1 == class2){
+    $(SelectClass1).each(function(){
+      $(this).parent().toggleClass('match animated rubberBand');
+      $(this).parent().unbind();
+    });
+  }else{
+    $('.open').find(SelectClass1).parent().addClass('animated shake nomatch');
+    $('.open').find(SelectClass2).parent().addClass('animated shake nomatch');
+    setTimeout(function(){
+      $('.open').find(SelectClass1).parent().removeClass('animated nomatch shake open show');
+      $('.open').find(SelectClass2).parent().removeClass('animated nomatch shake open show');
+    },1000);
+    checkArry.splice(0,2);
+  }
+  if (checkArry.length == 16) {
+    setTimeout(function () {
+      $('#win').toggleClass('hidden animated shake');
+    }, 1000);
+  }
+}
 
 // more easy way for shuffle
 function shuffle(array){

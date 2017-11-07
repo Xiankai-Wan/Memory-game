@@ -9,7 +9,8 @@ var cards = [
               "fa-cube","fa-cube",
               "fa-leaf","fa-leaf",
               "fa-bicycle","fa-bicycle",
-              "fa-bomb","fa-bomb"]
+              "fa-bomb","fa-bomb"
+            ];
 
 /*
  * Display the cards on the page
@@ -34,16 +35,38 @@ var cards = [
 //     return array;
 // }
 
+$(function(){
+  initGamePage();
+  $('ul.deck').on('click', 'li', function () {
+    $(this).addClass('open show');
+  });
+});
+
 // more easy way for shuffle
 function shuffle(array){
-  array.sort(function(){
+  copyArr = array.slice(); //复制数组，这样不会影响到原数组
+  copyArr.sort(function(){
     return Math.random() > 0.5? 1:-1;
-  })
+  });
+  return copyArr;
 }
 
+//ready the initial page info 
+function initGamePage(){
+  var initArry = shuffle(cards);
+  $('.card i').each(function () {
+    $(this).parent().removeClass(); //这里这么做是帮助restart节省代码，不然要额外清除open show等class
+    $(this).parent().addClass('card');
+    $(this).removeClass();
+    $(this).addClass('fa');
+    $(this).addClass(initArry.pop());
+  });
+}
 
-
-
+// restart the game
+$('.restart').click(function () {
+  initGamePage();  //这里只做到了重新初始化所有卡牌
+});
 
 /*
  * set up the event listener for a card. If a card is clicked:

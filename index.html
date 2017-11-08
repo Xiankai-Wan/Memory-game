@@ -1,37 +1,44 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>Matching Game</title>
     <meta name="description" content="">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
     <link href="https://cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/app.css">
 </head>
+
 <body>
 
     <div class="container">
         <header>
             <h1>Matching Game</h1>
         </header>
-    
+
         <section class="score-panel">
-        	<ul class="stars">
-        		<li><i class="fa fa-star"></i></li>
-        		<li><i class="fa fa-star"></i></li>
-        		<li><i class="fa fa-star"></i></li>
+            <ul class="stars">
+                <li>
+                    <i class="fa fa-star"></i>
+                </li>
+                <li>
+                    <i class="fa fa-star"></i>
+                </li>
+                <li>
+                    <i class="fa fa-star"></i>
+                </li>
             </ul>
 
-            <span class="moves">0</span> Moves  
+            <span class="moves">0</span> Moves
             <span class="second">0</span> Seconds
-            
+
             <div class="restart">
-        		<i class="fa fa-repeat"></i>
+                <i class="fa fa-repeat"></i>
             </div>
         </section>
-        
+
 
         <ul class="deck">
             <li class="card">
@@ -99,19 +106,18 @@
             <h1>Congratulations! You Win!</h1>
             <button type="button" id="winAgain" class="winButton">Play Again !</button>
         </div>
-        <!-- test -->
-        <div id="test">test</div>
-<!-- footer -->
+        <!-- footer -->
         <footer>
             <a id="developerInfo" href="https://xiankai-wan.github.io/Memory-game/">
-                <span id="developer">Developed by Kevin Wan  </span>
-                <img id="githubIcon" src="http://oxnpozqr8.bkt.clouddn.com/github_16x16.ico" alt="github picture">
+                <span id="developer">Developed by Kevin Wan </span>
+                <img id="githubIcon" src="./img/github_16x16.ico" alt="github picture">
             </a>
         </footer>
     </div>
-  
+
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-    <script src="http://oxnpozqr8.bkt.clouddn.com/jquery.timer.min.js"></script>
+    <!-- <script src="http://cdn.sobekdigital.com/includes/jquery-timers/1.2/jquery.timers.min.js"></script> -->
     <script src="js/app.js"></script>
 </body>
+
 </html>

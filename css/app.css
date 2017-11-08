@@ -160,3 +160,9 @@ h1 {
     float: right;
     cursor: pointer;
 }
+/*
+ * Footer
+ */
+footer {
+  margin: 20px auto;
+}

@@ -89,12 +89,12 @@ h1 {
 #win {
   position: absolute;
   width: 700px;
-  height: 440px;
+  height: 360px;
   margin: 40px auto; 
   border: 1px solid #ddd; 
   border-radius: 15px; 
-  background: #ffff; 
-  opacity: 1;
+  background: url('../img/geometry2.png'); 
+  opacity: 0.9;
   text-align: center;
   box-shadow: 0 3px 18px rgba(0,0,0,.1);
   z-index: 1;

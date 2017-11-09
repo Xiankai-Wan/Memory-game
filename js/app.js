@@ -15,7 +15,6 @@ var steps = 0;
 var nosame = [];
 var onestar = 14;
 var twostar = 22;
-var threestar = 33;
 $(function () {
   initGamePage();
   $('li.card').click(function () {
@@ -42,9 +41,6 @@ $(function () {
             break;
           case twostar:
             $('ul.stars').find('i').eq(1).addClass('animated bounceOutUp');
-            break;
-          case threestar:
-            $('ul.stars').find('i').eq(2).addClass('animated bounceOutUp');
             break;
         }
       }
@@ -128,7 +124,7 @@ function isWin() {
       $('ul.winShow').find('i').eq(0).toggleClass('hidden animated bounceInDown');
       $('ul.winShow').find('i').eq(1).toggleClass('hidden animated bounceInDown');
     }, 1500);
-  } else if (twostar <= steps && steps < threestar) {
+  } else if (twostar <= steps) {
     setTimeout(function () {
       $('ul.winShow').find('i').eq(0).toggleClass('hidden animated bounceInDown');
     }, 1500);
